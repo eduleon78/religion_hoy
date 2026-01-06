@@ -1,0 +1,35 @@
+extends ../layouts/layouts
+
+block content
+  // Page content
+  main.container-fluid-home
+    article.news-card
+      header.news-header
+        figure.news-image     
+          img.pt-3(src="./img/cruz-cristo.jpg", alt="200px" style="width:300px;")
+        span.category Religión
+        h1.news-title Bienvenido a este espacio dedicado fomentar la fe en la religion catolica.
+      section.news-content        
+        p.meta Publicado el #[time(datetime='2026-01-05') 05 de enero de 2026] por #[a(href='#') Admin]
+        p.excerpt En este sitio daremos a conocer y detallaremos el calendario liturgico de la religion catolica y su importancia para la persona. 
+        | En este sitio, exploraremos la importancia de la oración en la vida cotidiana, 
+        | compartiremos recursos inspiradores y ofreceremos consejos prácticos para enriquecer
+        | tu práctica espiritual. Ya sea que busques guía, consuelo o simplemente un momento de reflexión, 
+        | estamos aquí para acompañarte en tu camino de fe. 
+        a.read-more(href='#') Leer más...
+  // Footer
+  footer.py-4.bg-light.mt-auto
+    .container-fluid-home
+      .row.align-items-center
+        .col-md-6.text-center.text-md-start.mb-3.mb-md-0
+          p.mb-0 &copy; 2026 Tu Sitio de Fe. Todos los derechos reservados.
+        .col-md-6.text-center.text-md-end
+          a.btn.btn-primary.m-1(href='#') Facebook
+          a.btn.btn-info.m-1(href='#') Twitter
+          a.btn.btn-danger.m-1(href='#') Instagram
+  // Bootstrap core JS
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+  // Core theme JS
+  script(src='/js/scripts.js')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js' integrity='sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI' crossorigin='anonymous')
+

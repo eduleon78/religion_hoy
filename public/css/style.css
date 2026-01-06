@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+.container-home {
+    padding-bottom: 4rem;
+    background-color: #f9f9f9;
+    padding-top: 20px;
+	position: relative;
+	width: 800px;
+	margin: 0px auto;
+}
+
+.santoral {
+    padding-bottom: 4rem;
+    background-color: #f9f9f9;
+    padding-top: 20px;
+    position: relative;
+    width: 1000px;
+    margin: 0px auto;
+    margin-top: 30px;
+}
+/* En tu archivo CSS */
+.mi-articulo {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+p {
+    font-family: "lucida grande", "trebuchet ms", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+}
+
+ol {
+    padding: 0;
+    margin: 0;
+    max-width: 700px;
+    position: relative;
+}
+
+ol::before {
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 8%;
+    background: peachpuff;
+    z-index: -1;
+}
+
+li.oracion-item {
+    padding: 0.5rem 1.5rem 1rem;
+    border-radius: 1.5rem;
+    background: peachpuff;
+}
+
+li.oracion-item + .oracion-item {
+    margin-top: 1rem;
+}
+
+::marker {
+    font-weight: 600;
+    color: tomato;
+    font-size: 1.8rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
