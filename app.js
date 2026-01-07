@@ -5,7 +5,8 @@ import cors from 'cors'
 import helmet from 'helmet'
 import logger from 'morgan'
 
-import routes from './routes/rHome.js'
+import routesInicio from './routes/routeInicio.js'
+import routesReligion from './routes/routeReligion.js'
 
 //Initialization
 const __dirname = process.cwd()
@@ -27,7 +28,8 @@ app.use(express.json())
 
 
 //Routes
-app.use(routes)
+app.use(routesInicio)
+app.use(routesReligion)
 
 
 //Public files

@@ -1,35 +1,43 @@
 extends ../layouts/layouts
 
 block content
-  // Page content
-  main.container-fluid-home
-    article.news-card
-      header.news-header
-        figure.news-image     
-          img.pt-3(src="./img/cruz-cristo.jpg", alt="200px" style="width:300px;")
-        span.category Religión
-        h1.news-title Bienvenido a este espacio dedicado fomentar la fe en la religion catolica.
-      section.news-content        
-        p.meta Publicado el #[time(datetime='2026-01-05') 05 de enero de 2026] por #[a(href='#') Admin]
-        p.excerpt En este sitio daremos a conocer y detallaremos el calendario liturgico de la religion catolica y su importancia para la persona. 
-        | En este sitio, exploraremos la importancia de la oración en la vida cotidiana, 
-        | compartiremos recursos inspiradores y ofreceremos consejos prácticos para enriquecer
-        | tu práctica espiritual. Ya sea que busques guía, consuelo o simplemente un momento de reflexión, 
-        | estamos aquí para acompañarte en tu camino de fe. 
-        a.read-more(href='#') Leer más...
-  // Footer
-  footer.py-4.bg-light.mt-auto
-    .container-fluid-home
-      .row.align-items-center
-        .col-md-6.text-center.text-md-start.mb-3.mb-md-0
-          p.mb-0 &copy; 2026 Tu Sitio de Fe. Todos los derechos reservados.
-        .col-md-6.text-center.text-md-end
-          a.btn.btn-primary.m-1(href='#') Facebook
-          a.btn.btn-info.m-1(href='#') Twitter
-          a.btn.btn-danger.m-1(href='#') Instagram
-  // Bootstrap core JS
-  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
-  // Core theme JS
-  script(src='/js/scripts.js')
-  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js' integrity='sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI' crossorigin='anonymous')
+  //- Definición de una tarjeta de noticia
+mixin newsItem(category, title, img, summary)
+  article.news-card
+    .img-wrapper
+      img(src=img, alt=title)
+    .content
+      span.badge= category
+      h3= title
+      p= summary
+      a.read-more(href="/") Continuar leyendo
 
+block content
+  main.container
+    //- Sección Hero (Noticia más importante)
+    section.hero-section
+      .hero-grid
+        .hero-main
+          img(src="/img/thune.jpg", alt="Principal")
+          .hero-overlay
+            span.badge Urgente
+            h2 Thune descarta la posibilidad de una toma militar de Groenlandia
+            p El líder de la mayoría del Senado, John Thune (R-S.D.), desestimó el martes la posibilidad de desplegar militares para apoderarse de Groenlandia.
+        
+        aside.hero-side
+          h2 Lo más leído
+          ul.trending-list
+            li: a(href="#") 1. Resultados de las elecciones locales
+            li: a(href="#") 2. Nueva actualización del sistema operativo
+            li: a(href="#") 3. El clima para este fin de semana
+
+    //- Sección de cuadrícula de noticias
+    section.latest-news
+      h2.section-title Últimas Noticias
+      .news-grid
+        +newsItem("Tecnología", "Nuevos chips de 2nm", "/img/titulares/2nm.jpeg", "La industria de semiconductores da un salto masivo en eficiencia.")
+        +newsItem("Deportes", "Final de temporada emocionante", "/img/titulares/lvbp.png", "Todo lo que dejó la última jornada del torneo local.")
+        +newsItem("Cultura", "El arte digital en los museos", "/img/titulares/museo.jpg", "Cómo las pantallas están reemplazando a los lienzos tradicionales.")
+        +newsItem("Tecnología", "Nuevos chips de 2nm", "https://picsum.photos/id/2/400/250", "La industria de semiconductores da un salto masivo en eficiencia.")
+        +newsItem("Deportes", "Final de temporada emocionante", "https://picsum.photos/id/3/400/250", "Todo lo que dejó la última jornada del torneo local.")
+        +newsItem("Cultura", "El arte digital en los museos", "https://picsum.photos/id/4/400/250", "Cómo las pantallas están reemplazando a los lienzos tradicionales.")
